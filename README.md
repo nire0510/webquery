@@ -23,7 +23,7 @@ Options:
 
 ### Node App
 ```javascript
-var wq = require('../src/main.js');
+var wq = require('webquery');
 
 // Arguments:  
 // 1 - {string} Query statement  
