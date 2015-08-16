@@ -3,7 +3,7 @@ var wq = require('webquery'),
   program = require('commander');
 
 program
-  .version('1.0.4')
+  .version('1.0.5')
   .description('Query the web with SQL-like syntax')
   .usage('[options]')
   .option('-q, --query [query]', 'Query statement')
