@@ -1,6 +1,6 @@
 {
   "name": "webquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Query the web with SQL-like syntax",
   "main": "./src/main.js",
   "preferGlobal": true,
