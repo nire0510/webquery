@@ -1,6 +1,6 @@
 # WebQuery
 **Query the web with SQL-like syntax**  
-Inspired by the great Yahoo! YQL, this tool can be used to generate stub files for development, scrap data from multiple sources for your portal, perform website's health check,
+Inspired by the great Yahoo! YQL, this tool can help you generate stub files for development, scrap data from multiple sources for your portal, perform website's health check,
 test your app or just for fun!
 
 ## Installation
