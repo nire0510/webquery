@@ -74,3 +74,26 @@ For example: `WHERE jquery=(p > div.content)`
 For example: `WHERE xpath=(/*[@id=’foo’])`
 
 * Mixed: `'WHERE jquery=(p > div.content) OR xpath=(/*[@id=’foo’])'`
+
+## Output
+```javascript
+{
+  "meta": {
+    "date": 1439761398928,          // The unix time which query was executed
+    "duration": 2881,               // The time it took the query to complete in milliseconds
+    "url": [                        // An array of URLs which was used in the "FROM" clause
+      "https://my.website.com"
+    ],
+    "title": [                      // An array of pages titles of the url(s) above
+      "My Website"
+    ],
+    "items": 36                     // Number of items found
+  },
+  "data": [                         // Array of all items which were found
+    {
+      // ..
+    },
+    //...
+  ]
+}
+```
