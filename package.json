@@ -1,0 +1,39 @@
+{
+  "name": "webquery",
+  "version": "1.0.0",
+  "description": "Query the web with SQL-like syntax",
+  "main": "./src/main.js",
+  "preferGlobal": true,
+  "bin": {
+    "webquery": "./bin/webquery.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "commander": "^2.8.1",
+    "phantom": "^0.7.2",
+    "promise": "^7.0.4"
+  },
+  "engines": {
+    "node": ">=0.10.30"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "keywords": [
+    "web",
+    "sql",
+    "scrap",
+    "jquery",
+    "dom",
+    "query",
+    "xpath",
+    "content",
+    "stubs"
+  ],
+  "author": "Nir Elbaz <nire0510@gmail.com> (http://nirelbaz.com/)",
+  "license": "ISC"
+}
