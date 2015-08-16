@@ -79,9 +79,9 @@ For example: `WHERE xpath=(/*[@id=’foo’])`
 ```javascript
 {
   "meta": {
-    "date": 1439761398928,          // The unix time which query was executed
-    "duration": 2881,               // The time it took the query to complete in milliseconds
-    "url": [                        // An array of URLs which was used in the "FROM" clause
+    "date": 1439761398928,          // UNIX time in which query was executed
+    "duration": 2881,               // Time in milliseconds it took the query to complete
+    "url": [                        // Array of URLs which were used in the "FROM" clause
       "https://my.website.com"
     ],
     "title": [                      // An array of pages titles of the url(s) above
