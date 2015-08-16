@@ -73,4 +73,4 @@ For example: `WHERE jquery=(p > div.content)`
 * XPath: `WHERE xpath=(YOUR_SELECTOR_GOES_HERE)`  
 For example: `WHERE xpath=(/*[@id=’foo’])`
 
-* Mixed: 'WHERE jquery=(YOUR_SELECTOR_GOES_HERE) OR xpath=(/*[@id=’foo’])'
+* Mixed: `'WHERE jquery=(YOUR_SELECTOR_GOES_HERE) OR xpath=(/*[@id=’foo’])'`
