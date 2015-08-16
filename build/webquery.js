@@ -141,11 +141,11 @@ function query (strQuery, strFilePath, blnLogConsole) {
                 default:
                   // Attribute:
                   if ((arrMatches = arrProperty[0].match(/attr\(\s*(.+)\s*\)/i)).length === 2) {
-                    objItem[arrProperty[1] || arrMatches[0]] = $elem.attr(arrMatches[1]);
+                    objItem[arrProperty[1] || arrMatches[1]] = $elem.attr(arrMatches[1]);
                   }
                   // Data:
                   else if ((arrMatches = arrProperty[0].match(/data\(\s*(.+)\s*\)/i)).length === 2) {
-                    objItem[arrProperty[1] || arrMatches[0]] = $elem.data(arrMatches[1]);
+                    objItem[arrProperty[1] || arrMatches[1]] = $elem.data(arrMatches[1]);
                   }
                   break
               }
