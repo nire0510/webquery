@@ -1,4 +1,4 @@
-var wq = require('../src/main.js');
+var wq = require('../build/webquery.js');
 
 wq.query('SELECT attr(class) as c1, text, value, tag, type, class, id, name, index, size(children), size(attributes), html, css ' +
   'FROM http://my.como.com ' +

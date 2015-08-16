@@ -1,5 +1,5 @@
-#!/usr/local/bin/node
-var wq = require('../src/main.js'),
+#!/usr/bin/env node
+var wq = require('webquery'),
   program = require('commander');
 
 program
