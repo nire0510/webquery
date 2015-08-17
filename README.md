@@ -73,7 +73,7 @@ For example: `WHERE jquery=(p > div.content)`
 * XPath: `WHERE xpath=(YOUR_SELECTOR_GOES_HERE)`  
 For example: `WHERE xpath=(/*[@id=’foo’])`
 
-* Mixed: `'WHERE jquery=(p > div.content) OR xpath=(/*[@id=’foo’])'`
+* Mixed: `'WHERE jquery=(p > div.content) OR WHERE jquery=(#messages li) OR xpath=(/*[@id=’foo’])'`
 
 ## Output
 ```javascript
@@ -97,3 +97,17 @@ For example: `WHERE xpath=(/*[@id=’foo’])`
   ]
 }
 ```
+
+## Known Issues
+You may experience problems while executing `webquery` if you had to use `SUDO` to install it globally.  
+In general, it is most recommended to use NPM without having to run commands as administrator.
+To do so, follow the instructions below:
+
+1. Change prefix in NPM configuration:  
+  `npm config set prefix ~/npm`
+1. Add NPM's bin folder to your system's PATH in ~/.bashrc:  
+  `PATH=$PATH:$HOME/npm/bin`
+1. Reload ~/.bashrc:  
+  `. ~./.bashrc`
+  
+You may re-install now `webquery` package.
