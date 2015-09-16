@@ -1,8 +1,6 @@
-var wq = require('../build/webquery.js');
+var wq = require('../src/main.js');
 
-wq.query('SELECT attr(class) as c1, text, value, tag, type, class, id, name, index, size(children), size(attributes), html, css ' +
-  'FROM http://my.como.com ' +
-  'where jquery=(dl dd) OR jquery=(.dropdown a)', '../output.json', true).then(
+wq.query('select text from https://www.google.co.il/webhp?q=100%20ils%20to%20usd where jquery=(.vk_ans)', '../output.json', true).then(
   function success (result) {
     console.log('Query completed successfully!');
   },

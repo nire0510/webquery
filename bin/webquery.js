@@ -15,7 +15,7 @@ program
 if (program.query) {
   wq.query(program.query, program.file, program.log).then(
     function success (result) {
-      console.log('Query completed successfully!');
+      // Do nothing...
     },
     function error (err) {
       console.error('Query failed to complete: %s', err);
