@@ -55,7 +55,7 @@ function isValid (strQuery) {
  * @private
  */
 function _extractURLs (strContent) {
-  var rgxURL = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig;
+  var rgxURL = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
   return strContent.match(rgxURL);
 }
@@ -67,7 +67,7 @@ function _extractURLs (strContent) {
  * @private
  */
 function _extractSelectors (strContent) {
-  var rgxQuerySelector = /(jquery|xpath)=\((.*?)\)/ig,
+  var rgxQuerySelector = /(jquery|xpath)=\((.*?)\)(?:\s+|$)/ig,
     arrMatches,
     arrOutput = [];
 

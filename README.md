@@ -17,6 +17,7 @@ paragraph elements which has `content` class in page https://twitter.com/feditor
 Options:
 * `-q "QUERY"` - Query statement
 * `-f "JSON_OUTPUT_FILE_PATH"` - JSON output file path
+* `-ua "USER_AGENT"` - Valid browser user agent
 * `-l` - Indicates whether results should be logged to console
 * `-h` - Prints usage information
 * `-v` - Prints the version number
@@ -28,7 +29,8 @@ var wq = require('webquery');
 // Arguments:  
 // 1 - {string} Query statement  
 // 2 - {string} JSON output file path  
-// 3 - {boolean} Indicates whether results should be logged to console  
+// 3 - {string} Valid browser user agent
+// 4 - {boolean} Indicates whether results should be logged to console  
 // Returns a promise
 wq.query('SELECT text, attr(lang), size(children) as total FROM https://twitter.com/feditorio WHERE jquery=(.content p)', null, true).then(
   function success (result) {

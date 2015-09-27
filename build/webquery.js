@@ -42,9 +42,10 @@ module.exports = {
  * @param {string} strQuery Query statement
  * @param {string} strFilePath JSON output file path
  * @param {boolean} blnLogConsole Indicates whether to log the results to console
+ * @param {string} strUserAgent User agent
  * @returns {Promise}
  */
-function query (strQuery, strFilePath, blnLogConsole) {
+function query (strQuery, strFilePath, blnLogConsole, strUserAgent) {
   var promise,
     objOutput = {
       meta: {
@@ -67,7 +68,7 @@ function query (strQuery, strFilePath, blnLogConsole) {
 
       // Extract URLs from the "FROM" clause:
       objQuery.from.urls.forEach(function (strURL) {
-        arrSourcePromises.push(getPageSource(strURL));
+        arrSourcePromises.push(getPageSource(strURL, strUserAgent));
       });
 
       Promise.all(arrSourcePromises).then(function (result) {
@@ -201,10 +202,13 @@ function query (strQuery, strFilePath, blnLogConsole) {
   return promise;
 }
 
-function getPageSource (strURL) {
+function getPageSource (strURL, strUserAgent) {
   var promise = new Promise(function (resolve, reject) {
     phantom.create(function (pn) {
       pn.createPage(function (page) {
+        if (strUserAgent) {
+          page.set('settings.userAgent', strUserAgent);
+        }
         page.open(strURL, function (status) {
           if (status === 'success') {
             page.evaluate(function () { return { html: document.documentElement.outerHTML, title: document.title }; }, function (result) {
@@ -310,7 +314,7 @@ function isValid (strQuery) {
  * @private
  */
 function _extractURLs (strContent) {
-  var rgxURL = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig;
+  var rgxURL = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
   return strContent.match(rgxURL);
 }
@@ -322,7 +326,7 @@ function _extractURLs (strContent) {
  * @private
  */
 function _extractSelectors (strContent) {
-  var rgxQuerySelector = /(jquery|xpath)=\((.*?)\)/ig,
+  var rgxQuerySelector = /(jquery|xpath)=\((.*?)\)(?:\s+|$)/ig,
     arrMatches,
     arrOutput = [];
 
